@@ -34,10 +34,10 @@
 python AES.py
 ```
 ### 2. Pilih salah satu menu:
-  1: Enkripsi pesan baru.
-  2: Dekripsi pesan yang sudah terenkripsi.
-  3: Lihat daftar pesan yang tersimpan.
-  4: Keluar dari aplikasi.
+  - 1: Enkripsi pesan baru.
+  - 2: Dekripsi pesan yang sudah terenkripsi.
+  - 3: Lihat daftar pesan yang tersimpan.
+  - 4: Keluar dari aplikasi.
 
 ## 🛠️ Teknologi yang Digunakan
 Python 3.10+
