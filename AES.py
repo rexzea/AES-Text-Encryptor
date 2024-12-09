@@ -186,7 +186,7 @@ class SecureMessageManager:
     
     def list_messages(self):
         """
-        Daftar semua pesan tersimpan
+        Daftar semua pesan yg tersimpan
         """
         try:
             with sqlite3.connect(self.db_path) as conn:
