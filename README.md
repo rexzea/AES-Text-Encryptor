@@ -47,16 +47,16 @@ Python 3.10+
 
  ## 📷 Review
   ### Review Penggunaan
-  ![Review](assets/review.png)
+  ![Review](review.png)
 
   ### Daftar Pesan
-  ![Review](assets/daftar-pesan.png)
+  ![Review](daftar-pesan.png)
 
   ### Error Jika Password Salah
-   ![Review](assets/eror-password-salah.png)
+   ![Review](eror-password-salah.png)
 
   ### Tidak Dapat Mendeskripsikan Enkripsi Sebelum Membuat Enkripsi
-   ![Review](assets/tidak-bisa-mendeteksi-enkripsi.png)
+   ![Review](tidak-bisa-mendeteksi-enkripsi.png)
 
 
 ## 🤝 Kontribusi
