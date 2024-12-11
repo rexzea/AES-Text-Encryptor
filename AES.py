@@ -11,18 +11,14 @@ import hashlib
 
 class SecureMessageManager:
     def __init__(self, db_path='secure_messages.db'):
-        """
-        Inisialisasi manajer pesan dengan koneksi database
-        """
+
         self.db_path = db_path
         self.backend = default_backend()
         self._setup_logging()
         self._create_database()
     
     def _setup_logging(self):
-        """
-        Konfigurasi logging untuk pencatatan aktivitas
-        """
+
         # langsung otomatis buat direktori logs kalau belum ada
         os.makedirs('logs', exist_ok=True)
         
@@ -37,9 +33,7 @@ class SecureMessageManager:
         self.logger = logging.getLogger(__name__)
     
     def _create_database(self):
-        """
-        Membuat struktur database untuk menyimpan pesan yg terenkripsi
-        """
+
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -58,9 +52,7 @@ class SecureMessageManager:
             self.logger.error(f"Gagal membuat database: {e}")
     
     def generate_key(self, password, salt=None):
-        """
-        Membuat kunci enkripsi denhan PBKDF2
-        """
+
         if salt is None:
             salt = os.urandom(16)
         
@@ -76,9 +68,7 @@ class SecureMessageManager:
         return key, salt
     
     def encrypt_message(self, message, password, metadata=None):
-        """
-        Enkripsi pesan dan simpan ke database
-        """
+
         try:
             # membuat kunci passwordnya
             key, salt = self.generate_key(password)
@@ -128,9 +118,7 @@ class SecureMessageManager:
             raise
     
     def decrypt_message(self, encrypted_message, password):
-        """
-        Dekripsi pesan dari database atau input langsung
-        """
+
         try:
             # decode dari base64
             encrypted_data = base64.b64decode(encrypted_message.encode())
@@ -162,9 +150,7 @@ class SecureMessageManager:
             raise
     
     def get_message_by_hash(self, message_hash):
-        """
-        Ambil pesan terenkripsi dari hash
-        """
+
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
@@ -185,9 +171,7 @@ class SecureMessageManager:
             return None
     
     def list_messages(self):
-        """
-        Daftar semua pesan yg tersimpan
-        """
+
         try:
             with sqlite3.connect(self.db_path) as conn:
                 cursor = conn.cursor()
